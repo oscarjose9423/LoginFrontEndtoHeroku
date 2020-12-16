@@ -9,7 +9,7 @@ import axios from 'axios'
 
 const base = axios.create({
   baseURL: 'https://fast-escarpment-28519.herokuapp.com'
-  // baseURL: 'http://localhost:3000' <- local
+  // baseURL: 'http://localhost:3000' // <- local
   // baseURL: 'https://glacial-everglades-74306.herokuapp.com' <- del profe
 })
 

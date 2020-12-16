@@ -35,6 +35,7 @@
 
 
 <script>
+import VueJwtDecode from 'vue-jwt-decode'
 export default {
     data(){
         return{
@@ -43,12 +44,14 @@ export default {
     },
     methods: {
         getUserDetails(){
-            let user = localStorage.getItem('user');
+            // let user = localStorage.getItem('user'); //no se utilizaria para que reciba unicamente informacion del token y no del user
             let token = localStorage.getItem('jwt');
-
-            // paseo para convertir de JSON y poder visualzar
+            let user = VueJwtDecode.decode(token); // para recibir el token y darle uso a la informacion que viene del back
+            
+            console.log(user);
+            // paseo para convertir de JSON y poder visualzar ya no es necesario 
             if(token){
-              this.user = JSON.parse(user);
+              this.user = user;
             }
         },
         logOut(){
